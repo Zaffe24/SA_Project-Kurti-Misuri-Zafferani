@@ -1,0 +1,31 @@
+<html>
+<style>
+p{font-family:Cambria}
+h3{font-family:Cambria}
+li{font-family:Cambria}
+title{font-family:Cambria}
+body{background-image:url(https://www.jaggaer.com/app/uploads/2020/10/covid-19-webinar-blog.jpg)}   
+</style>
+<title>COVID sentences</title> 
+<head><h2>{{CHOICE}} and Covid association:</h2></head>
+<h3>Correlation evidences of the {{CHOICE}} and COVID found in literature</h3>
+<body>
+<p align='bottom-right'>In order to retry the operation: <a href='/sentences.{{CHOICE}}'>click here</a></p>
+<p style='text-align:right'><a href='/'>go back to homepage</a></p>
+<br>
+{% if RESULT == 'input not valid' %}
+	<p><b>It appears that the provided {{CHOICE}} is either incorrect or not present in the database.</b></p>
+	
+{%elif RESULT == 'no correlation found'%}
+	<p><b>In the database it appears no evidences of the correlation of the {{CHOICE}} with COVID-19.</b></p>
+
+{%else%}
+<h3>Below it is shown the complete list of senteces:</h3>
+<ul>
+	{%for element in RESULT%}
+	<li>{{element}}</li><br>
+	{%endfor%}
+</ul>	
+{%endif%}	
+</body>
+</html>

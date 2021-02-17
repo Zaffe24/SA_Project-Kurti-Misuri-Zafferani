@@ -1,0 +1,35 @@
+<html>
+<style>
+p{font-family:Cambria}
+h3{font-family: Cambria}
+h2{font-family:Cambria}
+li{font-family:Cambria}
+title{font-family:Cambria}
+body{background-image:url(https://www.jaggaer.com/app/uploads/2020/10/covid-19-webinar-blog.jpg)}   
+</style>
+<title>Semantics</title>
+<h2>Labels of each data collection</h2>
+<head>
+<h3>Below are presented the descriptors of columns in each data collections</h3>
+</head>
+<body>
+
+<p>The list's elements correspond to the labels found in Gene Data Collection columns:</p>
+<p>
+
+  {% for label in Sem1 %}
+  <li> {{label}} </li><br>
+  {% endfor %}
+  
+</p><br><br>
+<p>The list's elements correspond to the labels found in Disease Data Collection columns:</p>
+<p>
+
+  {% for label in Sem2 %}
+  <li> {{label}} </li><br>
+  {% endfor %}
+  
+</p>
+<p style='text-align:right'><a href='/'>go back to homepage</a></p>
+</body>
+</html>

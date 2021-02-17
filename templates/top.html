@@ -1,0 +1,23 @@
+<html>
+<style>
+h3{font-family:Cambria}
+h2{font-family:Cambria}
+li{font-family:Cambria}
+title{font-family:Cambria}
+body{background-image:url(https://www.jaggaer.com/app/uploads/2020/10/covid-19-webinar-blog.jpg)}  
+</style>
+<title>Top 10 associations</title>
+<h2>The 10-top most frequent distinct association between genes and diseases</h2><br>
+<head>
+<p><h3>Going through the data collections, there are several associations between genes and diseases.<br> 
+Below the most mentioned ones are listed:</h3></p><br>
+</head>
+<body>
+<ol>
+	{%for item in TOP%}
+	<li>The <b>{{item[0]}}</b> gene is associated to <b>{{item[1]}}</b></li><br>
+	{%endfor%}
+</ol><br><br>
+<p style='text-align:right'><a href='/'>go back to homepage</a></p>
+</body>
+</html>

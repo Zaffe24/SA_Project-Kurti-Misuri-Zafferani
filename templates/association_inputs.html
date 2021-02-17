@@ -1,0 +1,117 @@
+<html>
+<body>
+<style>
+p{font-family:Cambria}
+label{font-family: Cambria}
+h1{font-family:Cambria}
+button{font-family:Cambria}
+body{background-image:url(https://www.jaggaer.com/app/uploads/2020/10/covid-19-webinar-blog.jpg)}
+</style>
+<title>Association</title>
+<h2>Choose the {{CHOICE}} you are interested in:</h2>
+
+<form action="/associations.{{CHOICE}}.result", method='post'>
+  <p>You would like to search by:</p>
+  <input type="radio" id="id" name="choice" value="id">
+  <label for="id">{{CHOICE}} ID</label><br>
+  <input type="radio" id="Symbol" name="choice" value="Symbol">
+  <label for="Symbol">{{CHOICE}} name</label><br>
+
+  <br>  
+
+  <p>Please type in the {{CHOICE}} you are interested in:</p>
+  <label for="keyword">Search by this:</label>
+  <input type="text" id="keyword" name="keyword" placeholder='type here' required ><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br>
+<br>
+
+<p>Here we suggest some frequent {{CHOICE}} by their ID or their name that can be written in the box:</p>
+<style>
+.dropbtn {
+  background-color: #F7FE2E;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #D8D8D8;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #D8D8D8;}
+</style>
+{% if CHOICE =='Gene' %}
+
+	<div class="dropdown" style="float:center;">
+	<button class="dropbtn"><b>{{CHOICE}} ID</b></button>
+	<div class="dropdown-content" style="right:-12;">
+		<p style='text-align:center'>59272</p>
+		<p style='text-align:center'>1636</p>
+		<p style='text-align:center'>1401</p>
+		<p style='text-align:center'>43740578</p>
+		<p style='text-align:center'>3569</p>
+	</div>
+	</div>
+
+	<div class="dropdown" style="float:left;">
+	<button class="dropbtn"><b>{{CHOICE}} Name</b></button>
+	<div class="dropdown-content" style="left:0;">
+		<p style='text-align:center'>ACE2</p>
+		<p style='text-align:center'>ACE</p>
+		<p style='text-align:center'>CRP</p>
+		<p style='text-align:center'>ORF1ab</p>
+		<p style='text-align:center'>IL6</p>
+	</div>
+	</div>
+
+{%else%}
+	<div class="dropdown" style="float:center;">
+	<button class="dropbtn"><b>{{CHOICE}} ID</b></button>
+	<div class="dropdown-content" style="right:-12;">
+		<p style='text-align:center'>C000657245</p>
+		<p style='text-align:center'>C000656484</p>
+		<p style='text-align:center'>C0524702</p>
+		<p style='text-align:center'>C0030567</p>
+		<p style='text-align:center'>C3714636</p>
+	</div>
+	</div>
+
+	<div class="dropdown" style="float:left;">
+	<button class="dropbtn"><b>{{CHOICE}} Name</b></button>
+	<div class="dropdown-content" style="left:0;">
+		<p style='text-align:center'>Coronavirus Disease 2019</p>
+		<p style='text-align:center'>SARS-CoV-2</p>
+		<p style='text-align:center'>Pulmonary Thromboembolisms</p>
+		<p style='text-align:center'>Parkinson Disease</p>
+		<p style='text-align:center'>Pneumonia</p>
+	</div>
+	</div>
+
+{% endif %}
+<p style='text-align:right'><a href='/'>go back to homepage</a></p>
+</body>
+</html>

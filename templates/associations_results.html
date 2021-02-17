@@ -1,0 +1,28 @@
+<html>
+<style>
+p{font-family:Cambria}
+li{font-family: Cambria}
+h2{font-family:Cambria}
+title{font-family:Cambria}
+body{background-image:url(https://www.jaggaer.com/app/uploads/2020/10/covid-19-webinar-blog.jpg)}
+</style>
+<title>Associated {{OTHER}}</title> 
+<head><h2>{{OTHER}} associated to the {{CHOICE}} of interest:</h2></head>
+<body>
+<p align='bottom-right'>In order to retry the operation: <a href='/associations.{{CHOICE}}'>click here</a></p>
+<p style='text-align:right'><a href='/'>go back to homepage</a></p>
+<br>
+{% if RESULT == 'input not valid' %}
+	<p><b>It appears that the provided {{CHOICE}} is either incorrect or no correlation was found.</b></p>
+
+{%else%}
+<h3>Below it is shown the complete list of the {{OTHER}}:</h3>
+<ul>
+	{%for element in RESULT%}
+	<li>{{element}}</li>
+	{%endfor%}
+</ul>	
+{%endif%}	
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<style>
+p{font-family:Cambria}
+h2{font-family:Cambria}
+li{font-family:Cambria}
+title{font-family:Cambria}
+body{background-image:url(https://www.jaggaer.com/app/uploads/2020/10/covid-19-webinar-blog.jpg)}
+</style>
+<title>List of {{CHOSE}}</title>
+	<head><h2>The ordered list of {{CHOSE}} contained in the data collection:</h2></head>
+<p>The following list is ordered in ascending manner, based on the abundancy of the {{CHOSE}} in literature</p>
+<body>
+<p style='text-align:right'><a href='/'>go back to homepage</a></p>
+<ol>
+	{%for element in RESULT%}
+	<li>{{element}}</li>
+	{%endfor%}
+</ol>
+</body>
+</html>
+
